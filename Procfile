@@ -1,1 +1,1 @@
-web: gunicorn jcole.wsgi
+web: gunicorn jclone.wsgi
