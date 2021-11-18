@@ -1,6 +1,8 @@
 #from django.contrib.auth.models import User
 from django.db import models
+from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import AbstractUser
+
 STATE = (
         ("Abia","Abia"),
         ("Adamawa","Adamawa"),
@@ -46,9 +48,7 @@ class Product(models.Model):
     name = models.CharField(max_length=250)
     price = models.PositiveIntegerField()
     description = models.TextField()
-    #location = models.CharField(max_length=250,default="")
-    #buyer =models.ForeignKey(Interests)
-    image =models.ImageField(upload_to='Images/', default='profile_pics/default.jpg')
+    image = CloudinaryField('image')
     is_sold = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -65,7 +65,7 @@ class Interests(models.Model):
     name =models.CharField(max_length=50)
     product = models.ForeignKey(Product,on_delete=models.CASCADE,related_name='interests',default='')
     email = models.EmailField()
-    location = models.CharField(max_length=250,default="")
+    location = models.CharField(choices=STATE,max_length=250)
     created =models.DateTimeField(auto_now_add=True)
 
     class Meta:

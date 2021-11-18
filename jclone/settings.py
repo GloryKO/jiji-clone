@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import django_heroku
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -54,6 +59,7 @@ INSTALLED_APPS = [
     #local apps
     'jiji',
     'api',
+    'cloudinary',
 
 ]
 
@@ -173,5 +179,11 @@ SWAGGER_SETTINGS = {
 'LOGIN_URL': 'rest_framework:login',
 'LOGOUT_URL': 'rest_framework:logout',
 }
+
+cloudinary.config( 
+  cloud_name = "glory2000", 
+  api_key = "124846754595366", 
+  api_secret = "vUYwqAW5gU7WB510oUb40_Grk8w" 
+)
 
 django_heroku.settings(locals())

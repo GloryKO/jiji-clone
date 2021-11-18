@@ -18,7 +18,7 @@
         </div><br>
 
     {% if request.user.is_authenticated %}
-
+            {% if user == product.seller  %}
                 <a href="{% url 'update_product' product.id %}">
                     <div class="form-check">
                         {% if product.is_sold == True %}
@@ -35,18 +35,21 @@
                 
                 <a class="w3-button w3-medium w3-round-large w3-amber "href="{% url 'dashboard'%}"style="text-decoration:none">Back</a>
 
-                <h3 class="w3-center">Interested Buyers : </h3>
-                {% for interest in interests %}
-                    <ul class="w3-ul ">
-                        <li class="w3-card w3-round w3-margin w3-padding-24">
-                            <b>Name: </b>{{interest.name}}<br>
-                            <b>Email: </b> {{interest.email}}<br>
-                            <b>Location: </b>{{interest.location}}<br>
-                        </li>
-                    </ul>
-                {% empty %}
-                        <p>There are no buyers yet.</p>
-                {% endfor %}
+                
+                    <h3 class="w3-center">Interested Buyers : </h3>
+                    {% for interest in interests %}
+                        <ul class="w3-ul ">
+                            <li class="w3-card w3-round w3-margin w3-padding-24">
+                                <b>Name: </b>{{interest.name}}<br>
+                                <b>Email: </b> {{interest.email}}<br>
+                                <b>Location: </b>{{interest.location}}<br>
+                            </li>
+                        </ul>
+                    {% empty %}
+                            <p>There are no buyers yet.</p>
+                    {% endfor %}
+           {% endif %}
+    
 
     {% else %}
 
