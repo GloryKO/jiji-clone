@@ -6,7 +6,7 @@ This app is a jiji clone app that allows you to sign up as a seller and upload p
 
 ### How to run the program
 
-> Ensure you have Python installed in your system, if not visit [python.org](www.python.org) to download and install
+> Ensure you have Python installed in your system, if not visit [python.org](https://www.python.org/) to download and install
 
 * clone this repository
 * open the folder in the code editor
@@ -16,6 +16,6 @@ This app is a jiji clone app that allows you to sign up as a seller and upload p
 * Install the requirements for the project using: `pip install -r requirements.txt`
 * Migrate the database using `python manage.py migrate`
 * Run the server using `python manage.py runserver`
-* Check the project at [here](localhost:8000/)
+* Check the project at [here](http://localhost:8000/)
 
-> To visit the api, click [here](localhost:8000/swagger/)
+> To visit the api, click [here](http://localhost:8000/swagger/)
