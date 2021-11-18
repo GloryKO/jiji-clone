@@ -4,6 +4,10 @@
 
 This app is a jiji clone app that allows you to sign up as a seller and upload product(s), and other buyer can contact the seller to get the product
 
+### The Deployed Project
+
+The project was hosted on heroku, you can view it [here](https://crop-2-cash.herokuapp.com/) and the swagger api documentation [here](https://crop-2-cash.herokuapp.com/swagger/)
+
 ### How to run the program
 
 > Ensure you have Python installed in your system, if not visit [python.org](https://www.python.org/) to download and install
