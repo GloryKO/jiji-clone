@@ -8,7 +8,7 @@
                 {% endif %}
                 </div>
                 <div class="w3-third w3-container w3-padding">
-        
+                    <b>Name: </b>  {{product.name}}<br><br>
                     <b>Price: </b>  {{product.price}}<br><br>
                     <b>Location: </b> {{product.seller.state_of_residence}}<br><br>
                     <b>Description : </b> {{product.description}}<br><br>
@@ -33,10 +33,10 @@
                 </a> <br>
                 <a class="w3-button w3-medium w3-round-large w3-red "href="{% url 'delete' product.id%}"style="text-decoration:none">Delete</a>
                 
-                <a class="w3-button w3-medium w3-round-large w3-amber "href="{% url 'dashboard'%}"style="text-decoration:none">Back</a>
+                <a class="w3-button w3-medium w3-round-large w3-amber "href="{% url 'dashboard'%}"style="text-decoration:none">Back</a><br>
 
                 
-                    <h3 class="w3-center">Interested Buyers : </h3>
+                    <h3 class="w3-center w3-opacity">Interested Buyers : </h3>
                     {% for interest in interests %}
                         <ul class="w3-ul ">
                             <li class="w3-card w3-round w3-margin w3-padding-24">
