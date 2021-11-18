@@ -4,9 +4,9 @@
     {% for product in products %}
         
         <div class="w3-row w3-card w3-padding w3-light-grey ">
-                <div class="w3-third w3-container w3-padding">
+                <div class="w3-third w3-container  w3-padding">
                     {% if product.image %}
-                        <img src="{{product.image.url}}" style="width:80%"><br><br>
+                        <img class="w3-small "src="{{product.image.url}}" style="width:60%;height:60%;object-fit:cover;"><br><br>
                     {% endif %}
                 </div>
                 <div class="w3-third w3-container w3-padding">

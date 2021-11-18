@@ -14,17 +14,20 @@
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 </head>
 <body>
-  <div class="w3-container"style="width:85%;margin:auto" >
+  <div class="w3-container" style="width:85%;margin:auto" >
     <div class="w3-container " >
                 <div class="w3-bar  w3-light-grey w3-margin-top w3-margin-bottom w3-padding">
-                <a class="w3-bar-item " href="{% url "products" %}"><img src="{% static 'jiji/img/logo.png' %}" alt='logo' /></a>
+                <a class="w3-bar-item w3-small" href="{% url "products" %}"><img src="{% static 'jiji/img/logo.png' %}" style="width:70%"alt='logo' /></a>
                     {% if request.user.is_authenticated %}
-                        <b class="w3-bar-item w3-right ">Hello {{request.user.username}}</b> 
-                       <a class="w3-bar-item w3-button w3-large w3-amber w3-round-xxlarge w3-right"href ="{% url "logout" %}"style="text-decoration:none">Logout</a>
+                       <div class="w3-dropdown-hover w3-right">
+                          <b class="w3-bar-item w3-right ">Hello {{request.user.first_name}}</b>
+                          <div class="w3-dropdown-content w3-bar-block">
+                             <a class="w3-bar-item w3-button w3-small w3-amber w3-round-xxlarge w3-right"href ="{% url "logout" %}"style="text-decoration:none">Logout</a>
+  
                     {% else %}
-                       <a class= " w3-bar-item w3-button w3-large w3-amber w3-round-xxlarge w3-right w3-margin-right " href ="{% url "login" %}"style="text-decoration:none">Login</a>
-                       <a class=" w3-bar-item w3-button w3-large w3-amber w3-round-xxlarge w3-right w3-margin-right" href ="{% url "register" %}"style="text-decoration:none">Register</a>
-                       
+                            <a class= " w3-bar-item w3-button w3-small w3-amber w3-round-xxlarge w3-right w3-margin-right " href ="{% url "login" %}"style="text-decoration:none">Login</a>
+                           <a class=" w3-bar-item w3-button w3-small w3-amber w3-round-xxlarge w3-right w3-margin-right" href ="{% url "register" %}"style="text-decoration:none">Register</a>
+                       </div>
                     {% endif %}
                 </div>
 
