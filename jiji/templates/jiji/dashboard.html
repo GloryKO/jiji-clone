@@ -1,0 +1,31 @@
+{% extends "jiji/base.html" %} 
+{% load crispy_forms_tags%}
+{% block content %}
+        {% for product in products %}
+                <div class="w3-row w3-card w3-padding ">
+                <div class="w3-third w3-container w3-padding">
+                        {% if product.image %}
+                          <img src="{{product.image.url}}" style="width:80%"><br><br>
+                        {% endif %}
+                </div>
+                <div class="w3-third w3-container w3-padding">
+        
+                    <b>Price: </b>  {{product.price}}<br><br>
+                    <b>Location: </b> {{product.seller.state_of_residence}}<br><br>
+                    <b>Description : </b> {{product.description}}<br><br>
+                    <p><a class="w3-button w3-round-large w3-amber "href="{% url 'product_detail' product.id%}"style="text-decoration:none">View More</a></p>
+
+                </div>
+        </div><br>
+    {% empty %}
+            <h2 class="w3-center">No products to display</h2><hr>
+         
+    {% endfor %}
+    <h3 class="w3-center">Create More Products</h3>
+<form class="w3-container " method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+        <button class="w3-button w3-medium w3-round-large w3-amber "type="submit">Create</button><br><br>
+</form>
+
+{% endblock %}
